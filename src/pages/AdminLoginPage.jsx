@@ -2,7 +2,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { AuthContext } from "../authContext";
 import Snackbar from "./SnackbarSecond";
@@ -93,7 +93,7 @@ const AdminLoginPage = () => {
       } else {
         console.log("Token has expired");
         setToken("");
-        setExpireAt(9000000000000000);
+        setExpireAt(10);
         dispatch({ type: "LOGOUT" });
         navigate("/admin/login");
       }
@@ -192,6 +192,10 @@ const AdminLoginPage = () => {
           onDismiss={handleSnackbarDismiss}
         />
       )}
+
+<div className="text-center mt-4">
+   <Link to="/"><button className="bg-blue-400 p-4">Back to Home</button></Link>
+   </div>
     </div>
   );
 };

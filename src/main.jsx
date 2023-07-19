@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { AuthContext } from "./authContext";
 import Initial from "./components/Initial";
 import SnackBar from "./components/SnackBar";
+import VideoPagination from "./components/VideoPaginate";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -22,6 +23,7 @@ function renderRoutes(role) {
           <Route exact path="/admin/login" element={<AdminLoginPage />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/" element={<Initial />}/>
+          <Route path="/admin/video" element={<VideoPagination />}/>
         </Routes>
       );
   }
